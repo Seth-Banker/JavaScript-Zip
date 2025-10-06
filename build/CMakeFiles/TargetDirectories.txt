@@ -1,0 +1,3 @@
+C:/Users/scar4/OneDrive/Desktop/School/Projects/cpp/JavaScript-Zip/build/CMakeFiles/JavaScript-Zip.dir
+C:/Users/scar4/OneDrive/Desktop/School/Projects/cpp/JavaScript-Zip/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/scar4/OneDrive/Desktop/School/Projects/cpp/JavaScript-Zip/build/CMakeFiles/ZERO_CHECK.dir

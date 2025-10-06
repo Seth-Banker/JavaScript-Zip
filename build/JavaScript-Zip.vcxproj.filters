@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\scar4\OneDrive\Desktop\School\Projects\cpp\JavaScript-Zip\src\javascript_zip.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\scar4\OneDrive\Desktop\School\Projects\cpp\JavaScript-Zip\zipper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\scar4\OneDrive\Desktop\School\Projects\cpp\JavaScript-Zip\deps\miniz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\scar4\OneDrive\Desktop\School\Projects\cpp\JavaScript-Zip\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{14948DF2-C5A2-33BE-AA03-B8A6459D1A68}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,34 @@
+{
+  "main": "lib/binding.js",
+  "scripts": {
+    "test": "node --napi-modules ./test/test_binding.js",
+    "build": "cmake-js build",
+    "rebuild": "cmake-js rebuild",
+    "clean": "cmake -E remove_directory build"
+  },
+  "gypfile": true,
+  "name": "javascript-zip",
+  "version": "1.0.0",
+  "description": "Easily create Zips with the help of C++ in JavaScript",
+  "devDependencies": {
+    "cmake-js": "^7.3.1",
+    "node-addon-api": "^8.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seth-Banker/JavaScript-Zip.git"
+  },
+  "keywords": [
+    "cpp",
+    "c",
+    "zip",
+    "tar",
+    "pack"
+  ],
+  "author": "Seth Banker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seth-Banker/JavaScript-Zip/issues"
+  },
+  "homepage": "https://github.com/Seth-Banker/JavaScript-Zip#readme"
+}
