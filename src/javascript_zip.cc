@@ -1,7 +1,7 @@
 #include <napi.h>
 #include <vector>
 #include <string>
-#include "zipper.h"
+#include "../zipper.h"
 
 // Convert JS string[] -> std::vector<std::string>
 static std::vector<std::string> toPaths(const Napi::Array& arr) {
@@ -50,8 +50,8 @@ static Napi::Value ZipFilesToPath(const Napi::CallbackInfo& info) {
 
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports.Set("zipFromFiles", Napi::Function::New(env, ZipFromFiles));
-    exports.Set("zipFilesToPath", Napi::Function::New(env, ZipFilesToPath));
+    exports.Set("zipToMemory", Napi::Function::New(env, ZipFromFiles));
+    exports.Set("zipToDisk", Napi::Function::New(env, ZipFilesToPath));
     return exports;
 }
 

@@ -1,0 +1,6 @@
+.vs/
+*.sln
+*.vcxproj*
+*.db
+*.opendb
+*.VC.db
