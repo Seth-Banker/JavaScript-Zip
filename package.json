@@ -1,6 +1,6 @@
 {
   "main": "lib/binding.js",
-  "files": [
+    "files": [
     "index.js",
     "README.md",
     "LICENSE",
@@ -13,8 +13,9 @@
     "rebuild": "cmake-js rebuild",
     "clean": "cmake -E remove_directory build"
   },
+  "gypfile": false,
   "name": "javascript-zip",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Easily create Zips with the help of C++ in JavaScript",
   "devDependencies": {
     "cmake-js": "^7.3.1",
