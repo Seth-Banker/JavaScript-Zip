@@ -50,8 +50,8 @@ static Napi::Value ZipFilesToPath(const Napi::CallbackInfo& info) {
 
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports.Set("zipToMemory", Napi::Function::New(env, ZipFromFiles));
-    exports.Set("zipToDisk", Napi::Function::New(env, ZipFilesToPath));
+    exports.Set("zip", Napi::Function::New(env, ZipFromFiles));
+    exports.Set("zipDisk", Napi::Function::New(env, ZipFilesToPath));
     return exports;
 }
 
