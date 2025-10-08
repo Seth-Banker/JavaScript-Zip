@@ -28,7 +28,7 @@ const zipFile = zip([
   './image.png'
 ]);
 
-// as of now zipFile only sits in memory.
+// now zipped file is sitting in memory as 'zipFile'
 
 // Writes the in-memory ZIP (zipFile) to disk as "bundle.zip"
 fs.writeFileSync('bundle.zip', zipFile);
