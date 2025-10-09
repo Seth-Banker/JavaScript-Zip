@@ -2,7 +2,7 @@
 
 # JavaScript-Zip
 
-**Windows only** for now.
+**Currently Windows only.**
 
 Node.js tool to create ZIP files in JavaScript with native C++ speed using Miniz. License is MIT.
 
