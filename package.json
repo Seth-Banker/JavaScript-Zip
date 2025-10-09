@@ -25,6 +25,9 @@
     "type": "git",
     "url": "git+https://github.com/Seth-Banker/JavaScript-Zip.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "cpp",
     "c",
