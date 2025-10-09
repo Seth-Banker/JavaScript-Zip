@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/javascript-zip.svg)](https://www.npmjs.com/package/javascript-zip) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # JavaScript-Zip
 
 **Windows only** for now.
