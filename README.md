@@ -53,6 +53,45 @@ zipDisk(
 
 `zipDisk()` is a faster way of writing the `zip()` example and avoid larger RAM usage. You would usually use `zip()` in cases when serving the ZIP or storing in a SQL or Redis.
 
+### `unzip(zipBytes: Buffer): Record<string, Buffer>` 
+reads a ZIP already in memory. Returns an object where each key is the path inside the ZIP and each value is a Node Buffer.
+
+```js
+const fs = require('fs');
+const { unzip } = require('javascript-zip');
+
+// find our target zip file named 'bundle.zip'
+const zipBytes = fs.readFileSync('./bundle.zip');
+
+// zip is now in memory as 'files'
+const files = unzip(zipBytes);
+
+// 'files' is a list of key/value pairs of files paths/byte data.
+
+// pull a specific file named 'note.txt'
+if (files['note.txt']) {
+  fs.writeFileSync('./unpackedNote.txt', files['note.txt']);
+}
+```
+
+### `unzipDisk(zipBytes: Buffer, outDir: string): void`
+extracts all regular files from a ZIP in memory to outDir. Creates folders as needed.
+
+***This will pull the ZIP into memory THEN write it out to disk.***
+
+```js
+const fs = require('fs');
+const path = require('path');
+const { unzipDisk } = require('javascript-zip');
+
+// THIS PULLS THE ZIP INTO MEMORY
+const zipBytes = fs.readFileSync('./bundle.zip');
+
+// creates our directory named 'out' where we will write out the ZIPs files to.
+const outDir = path.resolve(__dirname, 'out');
+
+unzipDisk(zipBytes, outDir);  // writes out/note.txt and out/image.png
+```
 
 # Roadmap
 - Add Web assembly support.
