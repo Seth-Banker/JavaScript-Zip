@@ -2,7 +2,7 @@
 
 **Windows only** for now.
 
-Create ZIP files in JavaScript with native C++ speed using Miniz. License is MIT.
+Node.js tool to create ZIP files in JavaScript with native C++ speed using Miniz. License is MIT.
 
 ---
 
@@ -52,3 +52,8 @@ zipDisk(
 ```
 
 `zipDisk()` is a faster way of writing the `zip()` example and avoid larger RAM usage. You would usually use `zip()` in cases when serving the ZIP or storing in a SQL or Redis.
+
+
+# Roadmap
+- Add Web assembly support.
+- Add ability to compress zips for server-client transfer and vice versa.
