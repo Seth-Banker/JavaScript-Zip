@@ -2,10 +2,10 @@
 project(JavaScript-Zip LANGUAGES C CXX)
 
 add_library(JavaScript-Zip MODULE
-  src/javascript_zip.cc
-  zipper.cpp
-  deps/miniz.c
-)
+  "src/javascript_zip.cc"
+  "zipper.cpp"
+  "deps/miniz.c"
+  )
 
 set_property(TARGET JavaScript-Zip PROPERTY CXX_STANDARD 20)
 
