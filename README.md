@@ -22,7 +22,7 @@ builds a valid ZIP archive in memory from a list of file paths. It returns a Nod
 const fs = require('fs');
 const { zip } = require('javascript-zip');
 
-// Create a ZIP from FILES note.txt and image.png then stores the new ZIP as zipFile.
+// Create a ZIP from FILES note.txt and image.png then stores the new ZIP as zipFile in memory to be used later.
 const zipFile = zip([
   './note.txt',
   './image.png'
