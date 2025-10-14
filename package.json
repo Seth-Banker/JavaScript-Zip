@@ -14,7 +14,7 @@
     "clean": "cmake -E remove_directory build"
   },
   "gypfile": false,
-  "name": "@Seth-Banker/javascript-zip",
+  "name": "javascript-zip",
   "version": "1.2.2",
   "description": "Easily create Zips with the help of C++ in JavaScript",
   "devDependencies": {
@@ -46,8 +46,5 @@
       "require": "./index.js",
       "default": "./index.js"
     }
-  },
-  "dependencies": {
-    "javascript-zip": "^1.1.5"
   }
 }
