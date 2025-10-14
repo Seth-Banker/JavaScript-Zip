@@ -4,7 +4,7 @@
     "index.js",
     "README.md",
     "LICENSE",
-    "prebuilds/*/*"
+    "prebuilds/**"
   ],
   "scripts": {
     "build": "node-gyp build"
