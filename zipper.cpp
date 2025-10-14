@@ -19,10 +19,18 @@ namespace JavaScript_Zip {
         std::FILE* fp = std::fopen(path.c_str(), "rb");
         if (!fp) throw std::runtime_error("open fail: " + path);
 
-        if (_fseeki64(fp, 0, SEEK_END) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
-        long long len = _ftelli64(fp);
-        if (len < 0) { std::fclose(fp); throw std::runtime_error("tell fail"); }
-        if (_fseeki64(fp, 0, SEEK_SET) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
+        #ifdef _WIN32
+            if (_fseeki64(fp, 0, SEEK_END) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
+            long long len = _ftelli64(fp);
+            if (len < 0) { std::fclose(fp); throw std::runtime_error("tell fail"); }
+            if (_fseeki64(fp, 0, SEEK_SET) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
+        #else
+            // Make sure large-file support is enabled via compile flags, see binding.gyp below.
+            if (fseeko(fp, 0, SEEK_END) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
+            off_t len = ftello(fp);
+            if (len < 0) { std::fclose(fp); throw std::runtime_error("tell fail"); }
+            if (fseeko(fp, 0, SEEK_SET) != 0) { std::fclose(fp); throw std::runtime_error("seek fail"); }
+        #endif
 
         size_t n = static_cast<size_t>(len);
         std::vector<uint8_t> buf(n);
