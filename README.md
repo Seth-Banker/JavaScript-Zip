@@ -100,4 +100,3 @@ unzipDisk(zipBytes, outDir);  // writes out/note.txt and out/image.png
 
 # Roadmap
 - Add Web assembly support.
-- Add ability to compress zips for server-client transfer and vice versa.
