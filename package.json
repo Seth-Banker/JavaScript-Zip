@@ -7,10 +7,7 @@
     "prebuilds/*/*"
   ],
   "scripts": {
-    "test": "node --napi-modules ./test/test_binding.js",
-    "build": "cmake-js build",
-    "rebuild": "cmake-js rebuild",
-    "clean": "cmake -E remove_directory build"
+    "build": "node-gyp build"
   },
   "gypfile": false,
   "name": "javascript-zip",
@@ -24,9 +21,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Seth-Banker/JavaScript-Zip.git"
-  },
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/javascript-zip"
   },
   "keywords": [
     "cpp",
