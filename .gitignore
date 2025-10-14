@@ -11,7 +11,7 @@
 *.sln.docstates
 .npmrc
 
-prebuilds/*
+prebuilds/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
