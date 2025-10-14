@@ -1,0 +1,68 @@
+name: prebuilds
+on:
+  workflow_dispatch:
+  push:
+    tags: [ "v*" ]
+
+jobs:
+  linux:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix: { arch: [x64, arm64] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: |
+          npm ci
+          npm i -D prebuildify node-addon-api
+          npx prebuildify --napi --platform linux --arch ${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prebuilds-linux-${{ matrix.arch }}
+          path: prebuilds/
+
+  macos_intel:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: |
+          npm ci
+          npm i -D prebuildify node-addon-api
+          npx prebuildify --napi --platform darwin --arch x64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prebuilds-darwin-x64
+          path: prebuilds/
+
+  macos_arm:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: |
+          npm ci
+          npm i -D prebuildify node-addon-api
+          npx prebuildify --napi --platform darwin --arch arm64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prebuilds-darwin-arm64
+          path: prebuilds/
+
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: |
+          npm ci
+          npm i -D prebuildify node-addon-api
+          npx prebuildify --napi --platform win32 --arch x64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prebuilds-win32-x64
+          path: prebuilds/
