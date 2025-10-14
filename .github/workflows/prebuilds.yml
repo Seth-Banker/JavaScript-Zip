@@ -2,25 +2,34 @@ name: prebuilds
 on:
   workflow_dispatch:
   push:
-    tags: [ "v*" ]
+    tags: ["v*"]
 
 jobs:
   linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix: { arch: [x64, arm64] }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
+      # Only needed if you truly cross-compile arm64 on x64
+      - if: matrix.arch == 'arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++-aarch64-linux-gnu
+          echo "CC=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
+          echo "CXX=aarch64-linux-gnu-g++" >> $GITHUB_ENV
+          echo "npm_config_arch=arm64" >> $GITHUB_ENV
       - run: |
           npm ci
           npm i -D prebuildify node-addon-api
-          npx prebuildify --napi --platform linux --arch ${{ matrix.arch }}
+          # Let prebuildify name the dir by platform and arch
+          npx prebuildify --napi --arch ${{ matrix.arch }}
       - uses: actions/upload-artifact@v4
         with:
           name: prebuilds-linux-${{ matrix.arch }}
-          path: prebuilds/
+          path: prebuilds/linux-${{ matrix.arch }}/
 
   windows:
     runs-on: windows-2022
@@ -31,8 +40,8 @@ jobs:
       - run: |
           npm ci
           npm i -D prebuildify node-addon-api
-          npx prebuildify --napi --platform win32 --arch x64
+          npx prebuildify --napi --arch x64
       - uses: actions/upload-artifact@v4
         with:
           name: prebuilds-win32-x64
-          path: prebuilds/
+          path: prebuilds/win32-x64/
