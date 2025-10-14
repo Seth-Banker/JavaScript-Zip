@@ -15,7 +15,7 @@
   },
   "gypfile": false,
   "name": "javascript-zip",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Easily create Zips with the help of C++ in JavaScript",
   "devDependencies": {
     "cmake-js": "^7.3.1",
