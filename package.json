@@ -4,8 +4,7 @@
     "index.js",
     "README.md",
     "LICENSE",
-    "prebuilds/",
-    "build/Release/javascript-zip-native.node"
+    "prebuilds/*/*"
   ],
   "scripts": {
     "test": "node --napi-modules ./test/test_binding.js",
@@ -19,14 +18,15 @@
   "description": "Easily create Zips with the help of C++ in JavaScript",
   "devDependencies": {
     "cmake-js": "^7.3.1",
-    "node-addon-api": "^8.5.0"
+    "node-addon-api": "^8.5.0",
+    "prebuildify": "^6.0.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Seth-Banker/JavaScript-Zip.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://www.npmjs.com/package/javascript-zip"
   },
   "keywords": [
     "cpp",
