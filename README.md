@@ -1,4 +1,4 @@
-[![npm version](https://img.shields.io/npm/v/javascript-zip.svg)](https://www.npmjs.com/package/javascript-zip) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/javascript-zip.svg)](https://www.npmjs.com/package/javascript-zip) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Build](https://github.com/Seth-Banker/JavaScript-Zip/actions/workflows/prebuilds.yml/badge.svg)](https://github.com/Seth-Banker/JavaScript-Zip/actions)
 
 # JavaScript-Zip
 
