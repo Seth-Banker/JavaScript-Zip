@@ -4,7 +4,7 @@
 
 Node.js tool to create ZIP files in JavaScript with native C++ speed using Miniz. License is MIT.
 
-## Compatible with :
+### Compatible with :
 - Linux-x64
 - Linux-arm64
 - Windows-x64
